@@ -8,14 +8,14 @@ import NewCardForm from './NewCardForm';
 import CARD_DATA from '../data/card-data.json';
 
 class Board extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       cards: CARD_DATA["cards"],
     };
   }
-  
+
   listCards(cards) {
     const cardElements = cards.map((card, i) => {
       return (
@@ -43,7 +43,8 @@ class Board extends React.Component {
 }
 
 Board.propTypes = {
-
+  url: PropTypes.string,
+  boardName: PropTypes.object,
 };
 
 export default Board;

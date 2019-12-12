@@ -26,7 +26,7 @@ class Card extends React.Component {
 }
 
 Card.propTypes = {
-
+  cards: PropTypes.array,
 };
 
 export default Card;
