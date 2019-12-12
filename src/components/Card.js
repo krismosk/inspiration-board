@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import emoji from 'emoji-dictionary';
+// const emoji = require("emoji-dictionary");
 
 import './Card.css';
 
@@ -12,8 +13,9 @@ class Card extends React.Component {
   }
   
   render() {
-    const { text, emoji } = this.props;
-    
+    const { text, emoji} = this.props.card;
+    // const viewEmoji = emoji.getUnicode(`${cardEmoji}`)
+    // console.log(emoji.getUnicode(`${cardEmoji}`));
     return (
       <div className="card">
         <section className="card__content">

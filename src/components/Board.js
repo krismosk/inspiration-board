@@ -31,15 +31,11 @@ class Board extends React.Component {
   
   listCards(cards) {
     // console.log(cards)
-    cards.forEach()
-    
-    
-    
-    
+    // cards.forEach()
     let cardElements
     
     if (cards.length === 0 || cards === undefined) {
-      return <p>no card</p>;
+      return "";
     }
     else {
       cardElements = cards.map((card, i) => {
