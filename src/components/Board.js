@@ -12,19 +12,45 @@ class Board extends React.Component {
     super(props);
 
     this.state = {
-      cards: CARD_DATA["cards"],
+      cards: [],
     };
   }
 
-  listCards(cards) {
-    const cardElements = cards.map((card, i) => {
-      return (
-        <Card
-          key={i}
-          {...card}
-        />
-      );
+  componentDidMount() {
+    axios.get(`${this.props.url}`)
+    .then((response) => {
+      this.setState({
+        cards: response.data,
+      });
+    })
+    .catch((error) => {
+      this.setState({ error: error.message });
     });
+  }
+  
+  
+  listCards(cards) {
+    // console.log(cards)
+    cards.forEach()
+    
+    
+    
+    
+    let cardElements
+    
+    if (cards.length === 0 || cards === undefined) {
+      return <p>no card</p>;
+    }
+    else {
+      cardElements = cards.map((card, i) => {
+        return (
+          <Card
+            key={i}
+            {...card}
+          />
+        );
+      });
+    }
 
     return cardElements;
   }
@@ -44,7 +70,7 @@ class Board extends React.Component {
 
 Board.propTypes = {
   url: PropTypes.string,
-  boardName: PropTypes.object,
+  boardName: PropTypes.string,
 };
 
 export default Board;
