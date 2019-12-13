@@ -1,6 +1,22 @@
 {
-  "main.css": "static/css/main.a745919b.css",
-  "main.css.map": "static/css/main.a745919b.css.map",
-  "main.js": "static/js/main.80faf53e.js",
-  "main.js.map": "static/js/main.80faf53e.js.map"
+  "files": {
+    "main.css": "/inspiration-board/static/css/main.0b570879.chunk.css",
+    "main.js": "/inspiration-board/static/js/main.66141a43.chunk.js",
+    "main.js.map": "/inspiration-board/static/js/main.66141a43.chunk.js.map",
+    "runtime-main.js": "/inspiration-board/static/js/runtime-main.ecf8ceb5.js",
+    "runtime-main.js.map": "/inspiration-board/static/js/runtime-main.ecf8ceb5.js.map",
+    "static/js/2.d0395555.chunk.js": "/inspiration-board/static/js/2.d0395555.chunk.js",
+    "static/js/2.d0395555.chunk.js.map": "/inspiration-board/static/js/2.d0395555.chunk.js.map",
+    "index.html": "/inspiration-board/index.html",
+    "precache-manifest.9d3ed50882debe0e5526801259babcfb.js": "/inspiration-board/precache-manifest.9d3ed50882debe0e5526801259babcfb.js",
+    "service-worker.js": "/inspiration-board/service-worker.js",
+    "static/css/main.0b570879.chunk.css.map": "/inspiration-board/static/css/main.0b570879.chunk.css.map",
+    "static/js/2.d0395555.chunk.js.LICENSE": "/inspiration-board/static/js/2.d0395555.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ecf8ceb5.js",
+    "static/js/2.d0395555.chunk.js",
+    "static/css/main.0b570879.chunk.css",
+    "static/js/main.66141a43.chunk.js"
+  ]
 }
