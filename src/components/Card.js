@@ -13,7 +13,7 @@ class Card extends React.Component {
 
 
   render() {
-    const { text, emoji, id } = this.props.card;
+    const { text, emoji } = this.props.card;
 
     return (
       <div className="card">
