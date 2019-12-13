@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+
 import './Card.css';
 const Emoji = require("emoji-dictionary");
 
@@ -9,11 +11,10 @@ class Card extends React.Component {
     this.state = {
     };
   }
-  
+
+
   render() {
-    const { text, emoji } = this.props.card;
-    // const viewEmoji = emoji.getUnicode(`${cardEmoji}`)
-    // console.log(emoji.getUnicode(`${cardEmoji}`));
+    const { text, emoji, id } = this.props.card;
 
     return (
       <div className="card">
@@ -21,6 +22,7 @@ class Card extends React.Component {
           <p className="card__content-text">{ text }</p>
           <p className="card__content-emoji">{ Emoji.getUnicode(`${emoji}`) }</p>
         </section>
+        <button onClick={this.props.deleteCard.bind(this, this.props.card)} type="button">Delete</button>
       </div>
     )
   }

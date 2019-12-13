@@ -27,11 +27,26 @@ class Board extends React.Component {
       this.setState({ error: error.message });
     });
   }
+
+  deleteCard = (selectedCard) => {
+  //  console.log(selectedCard);
+    axios.delete(`https://inspiration-board.herokuapp.com/cards/${selectedCard.id}`)
+      .then((response) => {
+        const newCards = this.state.cards.filter((object) => {
+          return object.card.id !== selectedCard.id;
+        });
+
+        this.setState({
+          cards: newCards,
+        });
+      })
+      .catch((error) => {
+        this.setState({ error: error.message });
+      });
+  }
   
   
   listCards(cards) {
-    // console.log(cards)
-    // cards.forEach()
     let cardElements
     
     if (cards.length === 0 || cards === undefined) {
@@ -42,6 +57,7 @@ class Board extends React.Component {
         return (
           <Card
             key={i}
+            deleteCard={this.deleteCard}
             {...card}
           />
         );
