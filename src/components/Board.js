@@ -29,7 +29,6 @@ class Board extends React.Component {
   }
 
   deleteCard = (selectedCard) => {
-  //  console.log(selectedCard);
     axios.delete(`https://inspiration-board.herokuapp.com/cards/${selectedCard.id}`)
       .then((response) => {
         const newCards = this.state.cards.filter((object) => {
@@ -44,8 +43,11 @@ class Board extends React.Component {
         this.setState({ error: error.message });
       });
   }
-  
-  
+
+  addCard = (selectedCard) => {
+    // add code
+  }
+
   listCards(cards) {
     let cardElements
     
@@ -74,6 +76,11 @@ class Board extends React.Component {
         <ul>
           { this.listCards(this.state.cards) }
         </ul>
+        <section>
+          <NewCardForm 
+            addCard={this.addCard}
+          />
+        </section>
       </div>
     )
   }

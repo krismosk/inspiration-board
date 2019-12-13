@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-
 import './Card.css';
 const Emoji = require("emoji-dictionary");
 
+// add proptypes
 class Card extends React.Component {
   constructor(props) {
     super(props);
