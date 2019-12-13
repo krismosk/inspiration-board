@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import emoji from 'emoji-dictionary';
 import './NewCardForm.css';
 
-// add proptypes
 const EMOJI_LIST = ["", "heart_eyes", "beer", "clap", "sparkling_heart", "heart_eyes_cat", "dog"]
 
 class NewCardForm extends React.Component {
@@ -35,18 +34,19 @@ class NewCardForm extends React.Component {
       emoji: '',
     });
 
-    // this.props.addCard({
-    //   text: this.state.text,
-    //   emoji: this.state.emoji,
-    // });
+    this.props.addCard({
+      text: this.state.text,
+      emoji: this.state.emoji,
+    });
   }
 
   render() {
     return (
-      <div>
-        <h3>Create a new card!</h3>
-        <form>
+      <div className="new-card-form">
+        <h3 className="new-card-form__header">Create a new card!</h3>
+        <form className="new-card-form__form">
           <input 
+            className="new-card-form__form-textarea"
             type="text"
             placeholder="Enter a text"
             onChange={this.onFormChange}
@@ -54,6 +54,7 @@ class NewCardForm extends React.Component {
             name="text" 
           />
           <input 
+            className="new-card-form__form-textarea"
             type="text"
             placeholder="Enter an emoji name"
             onChange={this.onFormChange}
@@ -61,7 +62,7 @@ class NewCardForm extends React.Component {
             name="emoji" 
           />
           <div>
-            <input onClick={this.onFormSubmit} type="submit" value="Submit Card" className="PlayerSubmissionForm__submit-btn" />             
+            <input className="new-card-form__form-button" onClick={this.onFormSubmit} type="submit" value="Submit Card"/>             
           </div>
         </form>
       </div>

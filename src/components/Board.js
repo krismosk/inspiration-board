@@ -44,8 +44,19 @@ class Board extends React.Component {
       });
   }
 
-  addCard = (selectedCard) => {
-    // add code
+  addCard = (card) => {
+    axios.post('https://inspiration-board.herokuapp.com/boards/kristina/cards', card)
+      .then((response) => {
+        const updatedData = this.state.cards;
+        updatedData.push(response.data);
+        this.setState({
+          cards: updatedData,
+          error: '',
+        });
+      })
+      .catch((error) => {
+        this.setState({ error: error.message });
+      });
   }
 
   listCards(cards) {
